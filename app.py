@@ -7,9 +7,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import NLTKTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
-# from langchain_core.messages import SystemMessage
 from langchain_core.prompts import ChatPromptTemplate
-# from langchain_core.prompts import HumanMessagePromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from chromadb.api.client import SharedSystemClient
