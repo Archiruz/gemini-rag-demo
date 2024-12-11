@@ -1880,6 +1880,26 @@ SQLAlchemy = ">=1.4,<3"
 tenacity = ">=8.1.0,<8.4.0 || >8.4.0,<10"
 
 [[package]]
+name = "langchain-chroma"
+version = "0.1.4"
+description = "An integration package connecting Chroma and LangChain"
+optional = false
+python-versions = "<4,>=3.8.1"
+files = [
+    {file = "langchain_chroma-0.1.4-py3-none-any.whl", hash = "sha256:2877b284fc736bfd31628aa542ed0f5410c3cdc63ad2c670cb67fc360b4a236a"},
+    {file = "langchain_chroma-0.1.4.tar.gz", hash = "sha256:5963a79bf72af0f72019084bbc1e610d03ba33ec2df9a4b47b27c0132aa533fb"},
+]
+
+[package.dependencies]
+chromadb = ">=0.4.0,<0.5.4 || >0.5.4,<0.5.5 || >0.5.5,<0.6.0"
+fastapi = ">=0.95.2,<1"
+langchain-core = {version = ">=0.1.40,<0.4", markers = "python_version >= \"3.9\""}
+numpy = [
+    {version = ">=1,<2", markers = "python_version < \"3.12\""},
+    {version = ">=1.26.0,<2.0.0", markers = "python_version >= \"3.12\""},
+]
+
+[[package]]
 name = "langchain-community"
 version = "0.3.8"
 description = "Community contributed LangChain integrations."
@@ -5213,4 +5233,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.9.7 || >3.9.7,<4.0"
-content-hash = "bc55264600ad55a3593e17857d7956755f36652b81c531157b1c1f83731fd034"
+content-hash = "861fa69594cc913b98b995a5562bbf169c20328343dcff9f2c716006a88db882"
