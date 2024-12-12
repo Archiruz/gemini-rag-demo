@@ -1,3 +1,7 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import streamlit as st
 import os
 import nltk
@@ -7,9 +11,8 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import NLTKTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
-# from langchain_core.messages import SystemMessage
+# from langchain_community.vectorstores import Chroma
 from langchain_core.prompts import ChatPromptTemplate
-# from langchain_core.prompts import HumanMessagePromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 from chromadb.api.client import SharedSystemClient
@@ -63,7 +66,7 @@ class RAGChat:
             pages = loader.load_and_split()
 
             # Split into chunks
-            nltk.download("punkt")
+            nltk.download("punkt_tab")
             text_splitter = NLTKTextSplitter(chunk_size=1000,
                                              chunk_overlap=200)
             chunks = text_splitter.split_documents(pages)
