@@ -62,7 +62,7 @@ class RAGChat:
             pages = loader.load_and_split()
 
             # Split into chunks
-            nltk.download("punkt")
+            nltk.download("punkt_tab")
             text_splitter = NLTKTextSplitter(chunk_size=1000,
                                              chunk_overlap=200)
             chunks = text_splitter.split_documents(pages)
